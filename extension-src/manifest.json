@@ -1,0 +1,88 @@
+{
+  "manifest_version": 3,
+  "name": "دیده‌بان بورس",
+  "version": "2.12.0",
+  "description": "دیده‌بان بورس: پنل شناور روی TSETMC با چک‌لیست خرید سهام و اختیار معامله، تحلیل تکنیکال و بنیادی (صورت‌های مالی از TSETMC و کدال)، روند دوره‌ها، اطلاعیه‌های کدال و اسکرینر بازار (یافتن نمادهای ارزش بررسی)، مشاور ترکیبی سهم و اختیار و جمع‌بندی مسیر نماد (نمودار + مالی).",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://cdn.tsetmc.com/*",
+    "https://cdn.tsetmc.ir/*",
+    "https://*.codal.ir/*",
+    "https://codal.ir/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.tsetmc.com/*",
+        "*://tsetmc.com/*",
+        "*://*.tsetmc.ir/*",
+        "*://tsetmc.ir/*"
+      ],
+      "js": [
+        "hook-main.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.tsetmc.com/*",
+        "*://tsetmc.com/*",
+        "*://*.tsetmc.ir/*",
+        "*://tsetmc.ir/*"
+      ],
+      "js": [
+        "market-capture.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.tsetmc.com/*",
+        "*://tsetmc.com/*",
+        "*://*.tsetmc.ir/*",
+        "*://tsetmc.ir/*"
+      ],
+      "js": [
+        "engine-stock.js",
+        "engine-opt.js",
+        "collect-stock.js",
+        "collect-opt.js",
+        "collect-fin.js",
+        "codal-fin.js",
+        "chain.js",
+        "advisor.js",
+        "shared.js",
+        "advisor-ui.js",
+        "swing-trade.js",
+        "screener.js",
+        "content-stock.js",
+        "content-opt.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "دیده‌بان بورس",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

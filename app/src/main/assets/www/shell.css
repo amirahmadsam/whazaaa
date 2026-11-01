@@ -1,0 +1,18 @@
+:root{--acc:#4f46e5;--bg:#f5f6fb;--fg:#1c2236;--mut:#6a7390;--line:#e7eaf3}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);
+  font-family:"Vazirmatn","Shabnam","Sahel","Noto Sans Arabic",Tahoma,system-ui,sans-serif;direction:rtl}
+#hdr{position:fixed;top:0;left:0;right:0;height:52px;background:var(--acc);color:#fff;display:flex;align-items:center;gap:6px;padding:0 8px;z-index:5}
+#hdr .t{flex:1;min-width:0;font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#hdr button{background:rgba(255,255,255,.16);color:#fff;border:0;border-radius:10px;height:36px;padding:0 12px;font:inherit;font-size:13px}
+#hdr button:active{background:rgba(255,255,255,.3)}
+#home{padding:64px 12px 24px}
+#q{width:100%;height:46px;border:1px solid var(--line);border-radius:12px;padding:0 14px;font:inherit;font-size:15px;background:#fff;outline:none}
+#q:focus{border-color:var(--acc)}
+.sec{margin:16px 4px 6px;font-size:12px;color:var(--mut)}
+.it{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:6px 0;display:block;width:100%;text-align:right;font:inherit}
+.it:active{background:#eceeff}
+.it b{display:block;font-size:15px}
+.it span{display:block;font-size:12px;color:var(--mut);margin-top:2px}
+#msg{margin:14px 4px;font-size:13px;color:var(--mut);line-height:1.8}
+#wait{position:fixed;top:52px;left:0;right:0;padding:18px;text-align:center;font-size:13px;color:var(--mut)}
